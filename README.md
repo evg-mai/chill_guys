@@ -12,10 +12,10 @@
 ```
 cd frontend
 npm install           
-npm start              
+npm run start --openssl-legacy-provider            
 ```
 
-2) Запуск Backend
+2) Запуск Backend (после sudo apt install python3.7-env)
 
 ```
 cd backend

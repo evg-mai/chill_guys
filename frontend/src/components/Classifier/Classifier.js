@@ -54,7 +54,7 @@ class Classifier extends Component {
 
             }
         }).then(resp=>{
-            this.getImageClass(resp)
+            setTimeout(()=>{this.getImageClass(resp)}, 500);
             console.log(resp)
         }).catch(err=>{
             console.log(err)
@@ -90,28 +90,28 @@ class Classifier extends Component {
                 {({ isDragActive, getRootProps, getInputProps }) => (
                     <section className="container">
                         <div {...getRootProps({ className: 'dropzone back' })}>
-                            <input {...getInputProps()} />
+                            <input {...getInputProps()} capture="enviroment"/>
                             <i className="far fa-image mb-2 text-muted" style={{fontSize:100}}></i>
-                            <p className='text-muted' >{isDragActive ? 'Drop an image' : 'Drag and drop some files here, or click to select files'}</p>
+                            <p className='text-muted' >{isDragActive ? 'Drop an image' : 'Перетащите сюда или сделайте фотографию сварного шва'}</p>
                         </div>
                         <aside>
                            {files}
                         </aside>
 
                         {this.state.files.length > 0 &&
-                            <Button variant='info' size='lg' className='mt-3' onClick = {this.sendImage}>Select Image</Button>
+                            <Button variant='info' size='lg' className='mt-3' onClick = {this.sendImage}>Подтвердить</Button>
                         }
 
                         {this.state.isLoading &&
                             <Spinner animation="border" role="status">
-                                <span className="sr-only">Loading...</span>
+                                <span className="sr-only">Загрузка...</span>
                             </Spinner>
                         }
                         {this.state.recentImage &&
                             <React.Fragment>
                                 <Image className='justify-content-center mb-2' src={"http://127.0.0.1:8000"+this.state.recentImage.data.picture} 
                                 height='200' rounded/>
-                                <Alert variant='primary'>
+                                <Alert variant='success'>
                                     {this.state.recentImage.data.classified}
                                 </Alert>
                             </React.Fragment>

@@ -42,20 +42,20 @@ class ImageList extends Component {
         })
         return (
             <div>
-                <h1>Image List</h1>
+                <h1>Список запросов</h1>
                 {this.state.isLoading ?
                     <Spinner animation="border" role="status"></Spinner>
                     :
                     <React.Fragment>
                         {this.state.images.length === 0 &&
-                            <h3>No images classified</h3>
+                            <h3>Нет распознанных изображений</h3>
                         }
                         {images}
                         {(this.state.images.length > this.state.visible) ?
                             <Button variant='primary' size='lg' onClick={this.handleVisible}>Load more</Button>
                         :
                         
-                            <h3>No more images to load</h3>
+                            <h3>Нет больше изображений</h3>
                         }
                             
                         

@@ -3,12 +3,13 @@
     border: 3px dashed #f0f0f0;
     border-radius: 5px;
     width: 100%;
+    height: 180px;
     margin: 10px 0;
-    padding: 75px 5px;
+    padding: 25px 5px;
     outline: none;
     cursor: pointer;
 }
 
 .back:hover {
-    border: 3px dashed deepskyblue;
+    border: 3px dashed rgb(205, 239, 255);
 }
